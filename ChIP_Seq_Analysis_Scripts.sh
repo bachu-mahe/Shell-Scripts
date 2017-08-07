@@ -152,29 +152,3 @@ do
 	j=`echo $i | sed s/\.bam//`
 	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.RPKMNormalized.bw --binSize 10  --normalizeUsingRPKM --ignoreForNormalization chrX --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command_RPKM
 done
-
-
-
- computeMatrix scale-regions -S Mphage_H3.3A_HA_0h.RPKM.bigWig Mphage_H3.3_12h_HA_A.RPKM.bigWig Mphage_H3.3_24h_HA_B.RPKM.bigWig Mphage_H3.3_48h_HA_A.RPKM.bigWig -R All_High_ISG.bed Silent_Genes_Mphages.bed Constitutive_Genes_Mphages.bed --beforeRegionStartLength 3000 --regionBodyLength 5000 --
-
-Mphage_H3.3_0h_IP.RPKM.bigWig
-Mphage_H3.3_0h_IP.to1X.bigWig
-Mphage_H3.3_12h_HA_A.RPKM.bigWig
-Mphage_H3.3_12h_HA_A.to1X.bigWig
-Mphage_H3.3_12h_HA_B.RPKM.bigWig
-Mphage_H3.3_12h_HA_B.to1X.bigWig
-Mphage_H3.3_24h_HA_A.RPKM.bigWig
-Mphage_H3.3_24h_HA_A.to1X.bigWig
-Mphage_H3.3_24h_HA_B.RPKM.bigWig
-Mphage_H3.3_24h_HA_B.to1X.bigWig
-Mphage_H3.3_48h_HA_A.RPKM.bigWig
-Mphage_H3.3_48h_HA_A.to1X.bigWig
-Mphage_H3.3_6h_HA_A.RPKM.bigWig
-Mphage_H3.3_6h_HA_A.to1X.bigWig
-Mphage_H3.3A_HA_0h.RPKM.bigWig
-Mphage_H3.3A_HA_0h.to1X.bigWig
-
-
-
-bamCoverage --bam KO_0h_K36me3_S4.bam -of bigwig -o KO_0h_K36me3_S4.SeqDepthNorm.bw --binSize 10 --normalizeTo1x 2150570000 --ignoreForNormalization chrX --extendReads 150 --centerReads --smoothLength 30
-bamCoverage --bam WT_0h_K36me3_S3.bam -of bigwig -o WT_0h_K36me3_S3.bw --binSize 10 --normalizeTo1x 2150570000 --ignoreForNormalization chrX --extendReads 150 --centerReads --smoothLength 30
