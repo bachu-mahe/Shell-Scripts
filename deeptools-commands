@@ -1,5 +1,5 @@
 computeMatrix scale-regions -R B1.bed B2.bed B3.bed B4.bed B5.bed B6.bed B7.bed B8.bed B9.bed B10.bed \
-  -S HA-KI-MEFchip_wt0h_S13_R1_sorted.SeqDepthNorm.bw HA-KI-MEFchip_wt6h_S12_R1_sorted.SeqDepthNorm.bw \
+  -S KI-MEFchip_wt0h_S13_R1_sorted.SeqDepthNorm.bw KI-MEFchip_wt6h_S12_R1_sorted.SeqDepthNorm.bw \
   -b 5000 -a 5000 --regionBodyLength 5000 \
   --skipZeros -o HA-MEF.gz \
   --outFileNameMatrix HA-MEF.tab \
