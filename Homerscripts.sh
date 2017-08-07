@@ -84,11 +84,4 @@ analyzeRepeats.pl rna mm9 -strand both -count exons -d \
 	RO15_RNA_Seq/ \
 	RO16_RNA_Seq/ \
 	-rpkm > RNA_Seq_rpkm.txt
-
- annotatePeaks.pl tss mm9 -size 4000 -log -d HA-KI-MEFchip_wt0h_S13_R1_sorted/ HA-KI-MEFchip_wt6h_S12_R1_sorted/ > HA-TSS.txt
- annotatePeaks.pl tts mm9 -size 4000 -log -d HA-KI-MEFchip_wt0h_S13_R1_sorted/ HA-KI-MEFchip_wt6h_S12_R1_sorted/ > HA-TTS.txt
- annotatePeaks.pl rna mm9 -size given -log -d HA-KI-MEFchip_wt0h_S13_R1_sorted/ HA-KI-MEFchip_wt6h_S12_R1_sorted/ > HA-GB.txt
-
- annotatePeaks.pl tss mm9 -list ISG.txt -size 4000 -log -d HA-KI-MEFchip_wt0h_S13_R1_sorted/ HA-KI-MEFchip_wt6h_S12_R1_sorted/ > HA-ISG-TSS.txt
- annotatePeaks.pl tts mm9 -list ISG.txt -size 4000 -log -d HA-KI-MEFchip_wt0h_S13_R1_sorted/ HA-KI-MEFchip_wt6h_S12_R1_sorted/ > HA-ISG-TTS.txt
- annotatePeaks.pl rna mm9 -list ISG.txt -size given -log -d HA-KI-MEFchip_wt0h_S13_R1_sorted/ HA-KI-MEFchip_wt6h_S12_R1_sorted/ > HA-ISG-GB.txt
+#############################################################################################################################
