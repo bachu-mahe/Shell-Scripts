@@ -39,7 +39,7 @@ done
 for i in *.bed
 do
 	j=`echo $i | sed s/\.bed//`
-	echo "findMotifsGenome.pl ${j}/${j}.1kb_formotiff.txt mm9 ${j}-Peak_MotifOutput_200bpsize/ -size 200 -len 6,8,10 -S 15" >> find_motif
+	echo "findMotifsGenome.pl ${j}/${j}.regions.txt.txt mm9 ${j}-Peak_MotifOutput_200bpsize/ -size 200 -S 25 -len 6,8,10,12 -N 20000" >> find_motif
 done
 #############################################################################################################################
 for i in *.bed
