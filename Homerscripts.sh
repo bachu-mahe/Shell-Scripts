@@ -42,18 +42,16 @@ do
 	echo "findMotifsGenome.pl ${j}/${j}.regions.txt.txt mm9 ${j}-Peak_MotifOutput_200bpsize/ -size 200 -S 25 -len 6,8,10,12 -N 20000" >> find_motif
 done
 #############################################################################################################################
-for i in *.bed
+for i in *.txt
 do
-	j=`echo $i | sed s/\.bed//`
-	echo "annotatePeaks.pl ${j}.Hist.txt mm9 > ${j}.Hist.Peak-annotattion.txt" >> annotate_peaks
+	j=`echo $i | sed s/\.txt//`
+	echo "annotatePeaks.pl ${j}.txt mm9 > ${j}.Hist.Peak-annotattion.txt" >> annotate_peaks
 done
 #############################################################################################################################
-for i in *.bed
+for i in *.txt
 do
-	j=`echo $i | sed s/\.bed//`
-	echo "annotatePeaks.pl ${j}.Hist.txt mm9 -size 1000 -log \
-	-m ap1.motif jun-ap1.motif irf4.motif nfat-ap1.motif nfatc1.motif nfkb.motif pu1-irf.motif pu1-irf8.motif pu1.motif runx2.motif runx1.motif runx.motif spib.motif \
-	-mbed ${j}.bed -mdist -d ${j}> ${j}.Hist.Peak-annotattion.txt" >> annotate_peaks
+	j=`echo $i | sed s/\.txt//`
+	echo "annotatePeaks.pl ${j}.txt mm9 -size 1000 -log -m ap1.motif jun-ap1.motif irf4.motif nfat-ap1.motif nfatc1.motif nfkb.motif pu1-irf.motif pu1-irf8.motif pu1.motif runx2.motif runx1.motif runx.motif spib.motif > ${j}.Hist.Peak-annotattion.txt" >> annotate_peaks
 done
 #############################################################################################################################
 
