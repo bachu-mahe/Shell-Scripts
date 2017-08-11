@@ -48,6 +48,15 @@ do
 	echo "annotatePeaks.pl ${j}.Hist.txt mm9 > ${j}.Hist.Peak-annotattion.txt" >> annotate_peaks
 done
 #############################################################################################################################
+for i in *.bed
+do
+	j=`echo $i | sed s/\.bed//`
+	echo "annotatePeaks.pl ${j}.Hist.txt mm9 -size 1000 -log \
+	-m ap1.motif jun-ap1.motif irf4.motif nfat-ap1.motif nfatc1.motif nfkb.motif pu1-irf.motif pu1-irf8.motif pu1.motif runx2.motif runx1.motif runx.motif spib.motif \
+	-mbed ${j}.bed -mdist -d ${j}> ${j}.Hist.Peak-annotattion.txt" >> annotate_peaks
+done
+#############################################################################################################################
+
 for i in *.bed; do j=`echo $i | sed s/\.bed//`; echo "makeUCSCfile ${j}/ -o auto -bigWig mm9.chrom.sizes -fsize 1e20 -res 10 > ${j}.bigWig.trackInfo.txt" >> make_UCSC ; done
 #############################################################################################################################
 for i in *.bed
