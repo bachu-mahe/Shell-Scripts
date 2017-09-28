@@ -22,9 +22,11 @@ done
 	sample_name="${x:9:${#x}-9}"
 	echo -ne "Combining R1 files... "
 	cat *R1*.fastq > "${sample_name}_R1.fastq"
+	gzip "${sample_name}_R1.fastq"
 	echo "done."
 	echo -ne "Combining R2 files... "
 	cat *R2*.fastq > "${sample_name}_R2.fastq"
+	gzip "${sample_name}_R2.fastq"
 	echo "done."
 	echo
 	cd ..
