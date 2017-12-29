@@ -11,7 +11,7 @@ do
 	j=`echo $i | sed s/\.fastq.gz//`
 	echo "cd /data/bachum/Hira-LSK-ChIP \
    && export BOWTIE2_INDEXES=/fdb/igenomes/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index \
-   && bowtie2 --sensitive-local -p $(( SLURM_CPUS_PER_TASK - 2 )) --no-unal -x genome -U ${j}.fastq.gz | samtools view -q30 -Sb - > ${j}.bam"
+   && bowtie2 --sensitive-local -p \$(( SLURM_CPUS_PER_TASK - 2 )) --no-unal -x genome -U ${j}.fastq.gz | samtools view -q30 -Sb - > ${j}.bam"
 done
 #############################################################################################################################
 #For loop to sort BAM files
