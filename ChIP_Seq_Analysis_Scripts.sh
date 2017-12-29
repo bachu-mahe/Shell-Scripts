@@ -5,7 +5,7 @@ echo "Running on $SLURM_CPUS_PER_TASK CPUs"
 threads=$(( SLURM_CPUS_PER_TASK - 2 ))
 module load bowtie || exit 1
 module load samtools || exit 1
-
+#Used for Single End ChIP-Seq Data
 for i in *.fastq.gz
 do
 	j=`echo $i | sed s/\.fastq.gz//`
