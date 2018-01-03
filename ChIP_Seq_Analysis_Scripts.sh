@@ -118,37 +118,18 @@ echo "bam stats --in $x --qual --basic > ${j}_Stats.txt" >> bamutils_swarm
 done
 #############################################################################################################################
 
-
-
-for i in *.bam
-do
-j="${i:0:${#i}-4}"
-echo "bamCoverage --bam ${j}.bam --outFileName ${j}.bigWig --outFileFormat bigwig --normalizeTo1x 2150570000 --numberOfProcessors max" >> deeptools_command
-done
-#############################################################################################################################
-
-
-
-
-for i in *.bam
-do
-	j=`echo $i | sed s/\.bam//`;
-	echo "bamCoverage --bam $i --outFileName $j --outFileFormat bigwig --bamIndex $i.bai --normalizeTo1x 2150570000 --binSize 10" >> bamcoverage_command
-done
-
-
 computeMatrix scale-regions --regionsFileName genes.bed --scoreFileName KOA_06172015_Hira_0h_Wt_R1_sorted.bw --beforeRegionStartLength 3000 --afterRegionStartLength 3000 --regionBodyLength 5000 --binSize 1 --outFileName Hira_0h_matrix --outFileNameData Hira_0h_profile.tab --outFileNameMatrix Hira_0h_IndividualValues.tab --outFileSortedRegions Hira_0h_Heatmap1sortedRegions.bed
 
 #############################################################################################################################
 for i in *.bam
 do
 	j=`echo $i | sed s/\.bam//`
-	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.SeqDepthNorm.bw --binSize 10 --normalizeTo1x 2150570000 --ignoreForNormalization chrX --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command
+	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.SeqDepthNorm.bw –scaleFactor 1 --binSize 10 --normalizeTo1x 2150570000 --ignoreForNormalization chrX chrM --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command
 done
 #############################################################################################################################
 
 for i in *.bam
 do
 	j=`echo $i | sed s/\.bam//`
-	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.RPKMNormalized.bw --binSize 10  --normalizeUsingRPKM --ignoreForNormalization chrX --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command_RPKM
+	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.RPKMNormalized.bw –scaleFactor 1 --binSize 10  --normalizeUsingRPKM --ignoreForNormalization chrX chrM --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command_RPKM
 done
