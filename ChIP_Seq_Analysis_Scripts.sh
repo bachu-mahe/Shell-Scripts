@@ -124,12 +124,12 @@ computeMatrix scale-regions --regionsFileName genes.bed --scoreFileName KOA_0617
 for i in *.bam
 do
 	j=`echo $i | sed s/\.bam//`
-	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.SeqDepthNorm.bw –scaleFactor 1 --binSize 10 --normalizeTo1x 2150570000 --ignoreForNormalization chrX chrM --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command
+	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.SeqDepthNorm.bw --scaleFactor 1 --binSize 10 --normalizeTo1x 2150570000 --ignoreForNormalization chrX chrM --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command
 done
 #############################################################################################################################
 
 for i in *.bam
 do
 	j=`echo $i | sed s/\.bam//`
-	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.RPKMNormalized.bw –scaleFactor 1 --binSize 10  --normalizeUsingRPKM --ignoreForNormalization chrX chrM --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command_RPKM
+	echo "bamCoverage --bam ${j}.bam -of bigwig -o ${j}.RPKMNormalized.bw --scaleFactor 1 --binSize 10  --normalizeUsingRPKM --ignoreForNormalization chrX chrM --extendReads 150 --centerReads --smoothLength 30" >> bamcoverage_command_RPKM
 done
